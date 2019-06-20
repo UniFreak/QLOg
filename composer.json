@@ -1,0 +1,40 @@
+{
+    "name": "unifreak/qlog",
+    "description": "configurable logger to log into redis queue for persistence or into stashed for debugging",
+    "type": "library",
+    "require": {
+        "monolog/monolog": "~1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.7",
+        "predis/predis": "^1.1"
+    },
+    "license": "MIT",
+    "homepage": "https://www.github.com/UniFreak/QLog",
+    "authors": [
+        {
+            "name": "FangHao",
+            "email": "fanghao90s@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Unifreak\\QLog\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Unifreak\\QLog\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Unifreak\\QLog\\QLogServiceProvider"
+            ],
+            "aliases": {
+                "QLog": "Unifreak\\QLog\\QLogFacade"
+            }
+        }
+    }
+}
